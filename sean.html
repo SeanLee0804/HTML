@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Panel</title>
+  <link rel="stylesheet" href="sean.css">
+</head>
+<body>
+  <div class="panel">
+    <div class="options">
+      <div class="option">
+        <span class="label dynamic-rgb">旁視角</span>
+        <button class="toggle" onclick="toggleSlider('sensitivity', this)"></button>
+        <div class="slider-container" id="sensitivity" style="display: none;">
+          <label for="sensitivity-slider" class="dynamic-rgb">大小:</label>
+          <input id="sensitivity-slider" type="range" min="1" max="100" value="50" oninput="updateValue('sensitivity-value', this.value)">
+          <span id="sensitivity-value" class="dynamic-rgb">50</span>
+        </div>
+      </div>
+
+      <div class="option">
+        <span class="label dynamic-rgb">遠視角</span>
+        <button class="toggle" onclick="toggleSlider('red-dot', this)"></button>
+        <div class="slider-container" id="red-dot" style="display: none;">
+          <label for="red-dot-slider" class="dynamic-rgb">大小:</label>
+          <input id="red-dot-slider" type="range" min="1" max="100" value="50" oninput="updateValue('red-dot-value', this.value)">
+          <span id="red-dot-value" class="dynamic-rgb">50</span>
+        </div>
+      </div>
+
+      <div class="option"><span class="label dynamic-rgb">狙擊自瞄 - 大廳斷網</span><button class="toggle" onclick="toggleAnimation(this)"></button></div>
+      <div class="option"><span class="label dynamic-rgb">狙擊雙切 - 大廳斷網</span><button class="toggle" onclick="toggleAnimation(this)"></button></div>
+      <div class="option"><span class="label dynamic-rgb">超級快切 - 大廳斷網</span><button class="toggle" onclick="toggleAnimation(this)"></button></div>
+      <div class="option"><span class="label dynamic-rgb">時間加速開關 - 遊戲內</span><button class="toggle" onclick="toggleAnimation(this)"></button></div>
+      <div class="option"><span class="label dynamic-rgb">時間加速注入 - 遊戲內</span><button class="toggle" onclick="toggleAnimation(this)"></button></div>
+    </div>
+    <div class="status dynamic-rgb">狀態: N/A</div>
+    <div class="fps dynamic-rgb">FPS: <span id="fps-value">0</span></div>
+  </div>
+  <script src="sean.js"></script>
+</body>
+</html>
